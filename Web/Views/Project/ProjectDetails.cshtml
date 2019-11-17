@@ -1,0 +1,118 @@
+﻿@model IEnumerable<BusinessObject.ProjectObject>;
+@{
+    ViewData["Title"] = "ProjectDetails";
+}
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12" style="opacity: 1.0;">
+            <div class="box box-primary" style="margin-bottom: 5px!important;border-top:0px;">
+                <div class="col-md-12" style="opacity: 1.0;">
+                    <div class="col-md-6">
+                        <h3>Project Details</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-controller="Project" asp-action="Create" style="margin-top: 12px;float:right;" class="btn btn-primary">Add Project</a>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-body">
+            <table class="order-report">
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Description</th>
+                        <th>Impact </th>
+                        <th>Causes </th>
+                        <th>Centre for Pural Action </th>
+                        <th>Requirements </th>
+                        <th>Skills Needed </th>
+                        <th>Duration </th>
+                        <th>Time Commitment </th>
+                        <th>Time Period </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Impact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Causes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CentreforPuralAction)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Requirements)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SkillsNeeded)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Duration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeCommitment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimePeriod)
+                        </td>
+                        <td>
+                            <a asp-action="EditProject" asp-route-ProjectId="@item.ProjectId">Edit</a> |
+                            <a asp-action="DeleteProject" asp-route-ProjectId="@item.ProjectId">Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+<style>
+
+    .order-report {
+        width: 100% !important;
+    }
+
+        .order-report table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .order-report th {
+            padding-top: 11px;
+            padding-bottom: 11px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .order-report td, .order-report th {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .order-report tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+</style>
+
+
+

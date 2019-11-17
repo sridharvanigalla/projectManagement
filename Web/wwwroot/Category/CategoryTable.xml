@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Categories>
+  <Category>
+    <CategoryId>1</CategoryId>
+    <CategoryName>I.T.</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+  <Category>
+    <CategoryId>2</CategoryId>
+    <CategoryName>Test Category 1</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+</Categories>

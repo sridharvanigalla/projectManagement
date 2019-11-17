@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Categories>
+  <Category>
+    <CategoryId>1</CategoryId>
+    <CategoryName>Nike</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+  <Category>
+    <CategoryId>2</CategoryId>
+    <CategoryName>MRF</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+  <Category>
+    <CategoryId>3</CategoryId>
+    <CategoryName>Redpie</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+  <Category>
+    <CategoryId>4</CategoryId>
+    <CategoryName>Acer</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+  <Category>
+    <CategoryId>5</CategoryId>
+    <CategoryName>f</CategoryName>
+    <IsDeleted>0</IsDeleted>
+  </Category>
+</Categories>

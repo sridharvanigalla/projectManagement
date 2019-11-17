@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BusinessObject.CategoryObject>;
+
+@{
+    ViewData["Title"] = "CategoryDetails";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-md-12" style="opacity: 1.0;">
+            <div class="box box-primary" style="margin-bottom: 5px!important;border-top:0px;">
+                <div class="col-md-12" style="opacity: 1.0;">
+                    <div class="col-md-6">
+                        <h3>Category Details</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-controller="Category" asp-action="Create" style="margin-top: 12px;float:right;" class="btn btn-primary">Add Category</a>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-body">
+            <table class="order-report">
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CategoryName)
+                            </td>
+                            <td>
+                                <a asp-action="EditCategory" asp-route-CategoryId="@item.CategoryId">Edit</a> |
+                                <a asp-action="DeleteCategory" asp-route-CategoryId="@item.CategoryId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+<style>
+
+    .order-report {
+        width: 100% !important;
+    }
+
+        .order-report table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .order-report th {
+            padding-top: 11px;
+            padding-bottom: 11px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .order-report td, .order-report th {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .order-report tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+</style>
+

@@ -1,0 +1,88 @@
+﻿@model BusinessObject.ProjectObject;
+@{
+    ViewData["Title"] = "CreateProject";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-md-12" style="opacity: 1.0;">
+            <div class="box box-primary" style="margin-bottom: 5px!important;border-top: 0px;">
+                <div class="col-md-12" style="opacity: 1.0;border-bottom: solid gray 1px;">
+                    <div class="col-md-6">
+                        <h3>Create Project</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-controller="Project" asp-action="ProjectDetails" style="margin-top: 12px;float:right;" class="btn btn-primary">Back to Project</a>
+                    </div>
+                    <hr />
+                </div>
+
+
+
+                <form asp-controller="Project" asp-action="CreateProject" method="POST">
+                    <div class="box-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group col-sm-4">
+                            <input type="hidden" asp-for="ProjectId" />
+                            <label asp-for="CategoryName" class="control-label"></label>
+                            <select asp-for="CategoryName"
+                                    class="form-control"
+                                    asp-items="@(new SelectList(@ViewBag.listCategoryObject,"CategoryName", "CategoryName"))"></select>
+                            <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" placeholder="Description" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="Impact" class="control-label"></label>
+                            <input asp-for="Impact" class="form-control" placeholder="Impact" />
+                            <span asp-validation-for="Impact" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="Causes" class="control-label"></label>
+                            <input asp-for="Causes" class="form-control" placeholder="Causes" />
+                            <span asp-validation-for="Causes" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="CentreforPuralAction" class="control-label"></label>
+                            <input asp-for="CentreforPuralAction" class="form-control" placeholder="Centre for Pural Action" />
+                            <span asp-validation-for="CentreforPuralAction" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="Requirements" class="control-label"></label>
+                            <input asp-for="Requirements" class="form-control" placeholder="Requirements" />
+                            <span asp-validation-for="Requirements" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="SkillsNeeded" class="control-label"></label>
+                            <input asp-for="SkillsNeeded" class="form-control" placeholder="Skills Needed" />
+                            <span asp-validation-for="SkillsNeeded" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="Duration" class="control-label"></label>
+                            <input asp-for="Duration" class="form-control" placeholder="Duration" />
+                            <span asp-validation-for="Duration" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="TimeCommitment" class="control-label"></label>
+                            <input asp-for="TimeCommitment" class="form-control" placeholder="TimeCommitment" />
+                            <span asp-validation-for="TimeCommitment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label asp-for="TimePeriod" class="control-label"></label>
+                            <input asp-for="TimePeriod" class="form-control" placeholder="TimePeriod" />
+                            <span asp-validation-for="TimePeriod" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="pull-left">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</section>
